@@ -1,0 +1,18 @@
+{% extends 'base_light.html' %}
+    {% block content %}
+    <div class="content">
+        <div class="car">
+            <form method="post">
+                {% csrf_token %}
+                <h3>Utwórz nowe konto jako: Dealer samochodów</h3>
+                <br>
+                 <a href ="/add_car_dealer/"><button type="button" class="btn">Utwórz konto</button></a>
+                <br>
+                <br>
+                <h3>Utwórz nowe konto jako: Klient</h3>
+                <br>
+                <a href ="/add_customer/"><button type="button" class="btn">Utwórz konto</button></a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

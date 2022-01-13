@@ -1,0 +1,15 @@
+{% extends 'base_light_login.html' %}
+    {% block content %}
+    <div class="content">
+        <div class="car">
+            <form method="post">
+                {% csrf_token %}
+                <h3>Utwórz nowe konto jako: Klient</h3>
+                <br>
+                {{ form.as_p }}
+                <br>
+                <input type="submit" value="Wyślij">
+            </form>
+        </div>
+    </div>
+{% endblock %}

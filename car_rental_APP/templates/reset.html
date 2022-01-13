@@ -1,0 +1,13 @@
+{% extends 'base_light.html' %}
+    {% block content %}
+    <div class="content">
+        <div class="car">
+            <h2>Reset hasła</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Zmień hasło">
+            </form>
+        </div>
+    </div>
+    {% endblock %}

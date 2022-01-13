@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<h3><span>Najlepsza oferta, konkurencyjna cena!</span></h3>
+<br>
+<h3>Tylko u nas wynajmiesz samochód płacąc 100 PLN dzień za osobę!</h3>
+<br>
+<h3>Wybierz samochód idealny dla Ciebie!</h3>
+    <div class="car">
+        <ul>
+            <ul>
+                <h1>{{ car_1 }}</h1>
+                <p> Kolor : {{ car_1.color }}</p>
+                <p> Opis: {{ car_1.description }}</p>
+                <p> Dealer: {{ car_1.dealer }}</p>
+            </ul>
+            <ul>
+                <h1>{{ car_2 }}</h1>
+                <p> Kolor : {{ car_2.color }}</p>
+                <p> Opis: {{ car_2.description }}</p>
+                <p> Dealer: {{ car_2.dealer }}</p>
+            </ul>
+            <ul>
+                <h1>{{ car_3 }}</h1>
+                <p> Kolor : {{ car_3.color }}</p>
+                <p> Opis: {{ car_3.description }}</p>
+                <p> Dealer: {{ car_3.dealer }}</p>
+            </ul>
+        </ul>
+    </div>
+
+    <img src="https://storage.googleapis.com/www-paredro-com/uploads/2016/07/LUCES.jpg"</img>
+{% endblock %}

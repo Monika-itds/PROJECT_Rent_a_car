@@ -1,0 +1,13 @@
+{% extends 'base_light_login.html' %}
+    {% block content %}
+    <div class="content">
+        <div class="car">
+            <h2>Dodaj nowy samochód do floty: </h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Dodaj">
+         </form>
+        </div>
+    </div>
+    {% endblock %}

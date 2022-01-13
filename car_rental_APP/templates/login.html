@@ -1,0 +1,17 @@
+{% extends 'base_light.html' %}
+    {% block content %}
+    <div class="content">
+        <div class="car">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <br>
+                <input type="submit" value="Zaloguj">
+            </form>
+        <h3>{{ message }}</h3>
+            <br>
+            <p>Jeżeli nie posiadasz u nas konta, zarejestruj się tutaj:
+                <span><a href="/register/"><input type="submit" value="Rejestracja"></a></span></p>
+        </div>
+    </div>
+{% endblock %}

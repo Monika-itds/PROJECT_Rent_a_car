@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Wypożyczalnia samochodów EUREKA</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}" </link>
+</head>
+
+
+<body>
+    <h1 id="brand">Wypożyczalnia samochodów <span>EUREKA</span></h1>
+    <img src=""</img>
+    <div class="row dashboard-nowrap">
+        <ul>
+            <li><a href="/">Strona główna</a></li>
+            <li><a href="/logout/">Wyloguj się</a></li>
+        </ul>
+    </div>
+    {% block content %}
+    {% endblock %}
+    <br>
+    <footer class="footer-section pt-3 pb-3">
+        <h5 class="text-light">Copyright <span class="footer-text-color">Wypożyczalnia smochodów - EUREKA</span></h5>
+    </footer>
+
+</body>
+</html>

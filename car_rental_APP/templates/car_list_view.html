@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<body>
+
+    <div class="content">
+        <div class="car">
+            {% for car in cars %}
+            <img src="https://5.allegroimg.com/s512/01177e/5706331c4b3b8b0157454445fb75/AUTO-GUMOWE-PIANKOWE-GNIOTEK-ZABAWKA-ANTYSTRESOWA-Marka-inna">
+             <h2> Samochód: {{ car.car_name }} </h2>
+            <a href ="/car_detailed_view/{{ car.id }}/"><button type="button" class="btn">Szczegóły</button></a>
+        {% endfor %}
+        </div>
+    </div>
+</body>
+
+{% endblock %}
