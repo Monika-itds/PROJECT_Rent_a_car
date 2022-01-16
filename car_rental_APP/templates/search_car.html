@@ -1,0 +1,23 @@
+{% extends 'base_light_login.html' %}
+{% block content %}
+        <a href="/customer_portal/">Powrót do portalu klienta</a>
+        <br>
+    <div class="content">
+        <div class="car">
+        <h2> Sprawdź dostępność samochodów w wybranej dzielnicy miasta</h2>
+        <br>
+        <form action="/customer_portal/search_results/" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <br>
+            <input type="submit" value="Szukaj">
+        </form>
+   <!-- <br>
+    <ul>
+        {% for district in districts %}
+        <li>{{districts.0}}</li> -->
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+----

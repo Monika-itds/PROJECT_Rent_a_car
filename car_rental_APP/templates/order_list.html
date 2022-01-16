@@ -1,0 +1,36 @@
+{% extends 'base_light_login.html' %}
+{% block content %}
+        <a href="/car_dealer_portal/">Powrót do portalu dealera samochodów</a>
+        <br>
+    <div class="content">
+        <div class="car">
+            <h3 style="padding-top:30"><b>Lista rezerwacji samochodów</b></h3>
+                <div style="padding:18">
+                    <table>
+                        <tr>
+                            <th> Marka </th>
+                            <th> Kolor </th>
+                            <th> Wartość </th>
+                            <th> Ilość dni </th>
+                            <th> Dealer </th>
+                        </tr>
+
+                        {% for order in order_list %}
+
+                        <tr>
+                        <td>{{order.car.car_name}}</td>
+                        <td>{{order.car.color}}</td>
+                        <td>${{order.rent}}</td>
+                        <td>{{order.days}}</td>
+                            <td>{{order.car_dealer.car_dealer_name}}</td>
+                        </tr>
+
+                    {% endfor %}
+                    </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+

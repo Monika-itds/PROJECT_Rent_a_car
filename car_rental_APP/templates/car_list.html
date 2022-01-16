@@ -1,0 +1,40 @@
+{% extends 'base_light_login.html' %}
+{% block content %}
+        <a href="/car_dealer_portal/">Powrót do portalu dealera samochodów</a>
+        <br>
+    <div class="content">
+        <div class="car">
+            <h3 style="padding-top:30"><b>Samochody</b></h3>
+            <br>
+                <div style="padding:18">
+                    <table>
+                         <tr>
+                            <th> Marka </th>
+                            <th> Kolor </th>
+                            <th> Ilość miejsc </th>
+                             <th> Dzielnica </th>
+                             <th> Dealer </th>
+                            <!-- <th> Usuń </th> -->
+                         </tr>
+                             {% for car in car_list %}
+                        <tr>
+                            <td>{{car.car_name}}</td>
+                            <td>{{car.color}}</td>
+                            <td>{{car.capacity}} miejsc</td>
+                            <td>{{car.district}}</td>
+                            <td>{{car.dealer}}</td>
+                            <!-- <td><form action = "/car_dealer_portal/car_delet/" method="post"> -->
+                           <!-- {% csrf_token %}
+                                <input type="hidden" name="id" value="{{car.id}}">
+                                <input type="submit" value="Usuń"> -->
+                            </form></td>
+                          </tr>
+                             {% endfor %}
+                    </table>
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

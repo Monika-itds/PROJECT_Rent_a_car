@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class CarRentalAppConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'car_rental_APP'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "car_rental_APP"

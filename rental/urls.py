@@ -16,42 +16,54 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-#from django.conf.urls.static import static
-#from django.conf import settings
+# from django.conf.urls.static import static
+# from django.conf import settings
 
-from car_rental_APP.views import IndexView, CarListView, CarDetailedView, CarAddView, LooginView, LogoutView, \
-    RegisterView, CustomerRegistrationView, CarDealerRegistrationView, CarDealerPortalView, CustomerPortalView
+from car_rental_APP.views import (
+    IndexView,
+    CarListView,
+    CarDetailedView,
+    CarAddView,
+    LoginView,
+    LogoutView,
+    RegisterView,
+    CustomerRegistrationView,
+    CarDealerRegistrationView,
+    CarDealerPortalView,
+    CustomerPortalView,
+    CarsView,
+    CarOrderView,
+    CarSearchView,
+    #CarSearchResultsView,
+)
 
 
-app_name = 'car_rental_APP'
+app_name = "car_rental_APP"
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', IndexView.as_view()),
-    path('car_list/', CarListView.as_view(), name='CarListView'),
-    path('car_detailed_view/<int:car_id>/', CarDetailedView.as_view(), name='CarDetailedView'),
-    path('register/', RegisterView.as_view(), name='Register'),
-    path('add_car_dealer/', CarDealerRegistrationView.as_view(), name='Register'),
-    path('add_customer/', CustomerRegistrationView.as_view(), name='CustomerRegistrationView'),
-    path('login/', LooginView.as_view(), name='LoginView'),
-    path('logout/', LogoutView.as_view(), name='LogoutView'),
-    path('car_dealer_portal/', CarDealerPortalView.as_view(), name='CarDealerPortal'),
-    path('car_dealer_portal/add_car/', CarAddView.as_view(), name='AddCar'),
-    path('customer_portal/', CustomerPortalView.as_view(), name='CustomerPortal'),
-    #path('reset_password/<int:user_id>/', PasswordResetView.as_view()),
-#car_dealer_portal/
-    #path('car_dealer_portal/add_car/', CarAddView.as_view(), name='CarAddView'),
-    #path('car_dealer_portal/car_list/', ....View.as_view(), name='...AddView'),#samochody danego dealera
-    #path('car_dealer_portal/order_list/', ....View.as_view(), name='...AddView'), #złożone zamówienia
-    #path('car_dealer_portal/history/', ....View.as_view(), name='...AddView'),#historia zamówień
-#customer_portal/
-    #path('customer_portal/search/', ....View.as_view(), name='...AddView'), # wyszukuje po podanym kryterium
-    #path('customer_portal/search_results/', ....View.as_view(), name='...AddView'), #wyniki wyszukiwania
-    #path('customer_portal/rent_car/', ....View.as_view(), name='...AddView'), #przycisk rent -> przeierowanie do zamówienia
-    #path('customer_portal/order/', ....View.as_view(), name='...AddView'),#zamówienie + przeliczenie kaski: cost_per_day = int(car.capacity)*100
-    #path('customer_portal/update_order/', ....View.as_view(), name='...AddView'),
-    #path('customer_portal/delete_order/', ....View.as_view(), name='...AddView'),
-
+    path("admin/", admin.site.urls),
+    path("", IndexView.as_view()),
+    path("car_list/", CarListView.as_view(), name="CarListView"),
+    path("car_detailed_view/<int:car_id>/", CarDetailedView.as_view(), name="CarDetailedView",),
+    path("register/", RegisterView.as_view(), name="Register"),
+    path("add_car_dealer/", CarDealerRegistrationView.as_view(), name="Register"),
+    path("add_customer/", CustomerRegistrationView.as_view(), name="CustomerRegistrationView",),
+    path("login/", LoginView.as_view(), name="LoginView"),
+    path("logout/", LogoutView.as_view(), name="LogoutView"),
+# car_dealer_portal/
+    path("car_dealer_portal/", CarDealerPortalView.as_view(), name="CarDealerPortal",),
+    path("car_dealer_portal/add_car/", CarAddView.as_view(), name="AddCar"),
+    path("car_dealer_portal/cars/", CarsView.as_view(), name="CarList"),  # samochody
+# path('car_dealer_portal/car_delete/<int:pk>/', CarDeleteView.as_view(), name='CarDelete')
+    path("car_dealer_portal/order_list/", CarOrderView.as_view(), name="CarOrderView",),  # złożone zamówienia
+    # customer_portal/
+    path("customer_portal/", CustomerPortalView.as_view(), name="CustomerPortal"),
+    path( "customer_portal/search_car/", CarSearchView.as_view(), name="SearchCarView"), # wyszukuje po podanym kryterium
+    #path("customer_portal/search_results/", CarSearchResultsView.as_view(), name="CarSearchResultsView",),  # wyniki wyszukiwania
+    # path('customer_portal/rent_car/', ....View.as_view(), name='...AddView'), #przycisk rent -> przeierowanie do zamówienia
+    # path('customer_portal/order/', ....View.as_view(), name='...AddView'),#zamówienie + przeliczenie kaski: cost_per_day = int(car.capacity)*100
+    # path('customer_portal/update_order/', ....View.as_view(), name='...AddView'),
+    # path('customer_portal/delete_order/', ....View.as_view(), name='...AddView'),
 ]
 
-#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)#allow to show image in url
+# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)#allow to show image in url

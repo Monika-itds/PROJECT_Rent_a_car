@@ -1,0 +1,47 @@
+{% extends 'base_light_login.html' %}
+{% block content %}
+        <a href="/customer_portal/">Powrót do portalu klienta</a>
+        <br>
+    <div class="content">
+        <div class="car">
+            <h3 style="padding-top:30"><b>Dostępne samochody</b></h3>
+            <br>
+                <div style="padding:18">
+                    <table>
+                         <tr>
+                            <th> Marka </th>
+                            <th> Kolor </th>
+                             <th> Id </th>
+                             <th> Kod dzielnicy </th>
+                             <th> Ilość miejsc </th>
+                             <th> Rodzaj sillnika</th>
+                             <th> Opis </th>
+                             <th> Dealer </th>
+                            <!-- <th> Usuń </th> -->
+                         </tr>
+                              {% for car in request.session.cars_list %}
+                        <tr>
+                            <td>{{car.car_name}}</td>
+                            <td>{{car.color}}</td>
+                            <td>{{car.id}}</td>
+                            <td>{{car.district.pincode}}</td>
+                            <td>{{car.capacity}} miejsc</td>
+                            <td>{{car.engine}}</td>
+                            <td> {{car.description }}</td>
+                            <td>{{car.cardealer.dealer_name}}</td>
+                            <td><form action = "/customer_portal/rent/" method="post">
+                            {% csrf_token %}
+                                <input type="hidden" name="id" value="{{car.id}}">
+                                <input type="submit" value="Zarezerwuj">
+                                </form></td>
+                        </tr>
+
+                                {% endfor %}
+                    </table>
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
