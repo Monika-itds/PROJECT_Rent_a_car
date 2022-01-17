@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = "car_rental_APP.User"
 
+
 # Application definition
 
 INSTALLED_APPS = [
